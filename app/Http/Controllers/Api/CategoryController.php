@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ArticlesController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,6 @@ class ArticlesController extends Controller
     public function index()
     {
         //
-        $articles = Article::all();
-        return $articles;
     }
 
     /**
@@ -27,10 +26,6 @@ class ArticlesController extends Controller
     public function store(Request $request)
     {
         //
-        $article = new Article;
-        $article->title = $request->title;
-        $article->body = $request->body;
-        $article->save();
     }
 
     /**
@@ -42,8 +37,6 @@ class ArticlesController extends Controller
     public function show($id)
     {
         //
-        $article = Article::find($id);
-        return $article;
     }
 
     /**
@@ -56,10 +49,6 @@ class ArticlesController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $article = Article::find($id);
-        $article->title = $request->title;
-        $article->body = $request->body;
-        $article->save();
     }
 
     /**
@@ -71,7 +60,5 @@ class ArticlesController extends Controller
     public function destroy($id)
     {
         //
-        $article = Article::find($id);
-        $article->delete();
     }
 }

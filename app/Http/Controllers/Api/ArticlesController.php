@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Article;
 
 class ArticlesController extends Controller
 {
@@ -19,6 +21,16 @@ class ArticlesController extends Controller
     }
 
     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -27,10 +39,6 @@ class ArticlesController extends Controller
     public function store(Request $request)
     {
         //
-        $article = new Article;
-        $article->title = $request->title;
-        $article->body = $request->body;
-        $article->save();
     }
 
     /**
@@ -42,8 +50,17 @@ class ArticlesController extends Controller
     public function show($id)
     {
         //
-        $article = Article::find($id);
-        return $article;
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
     }
 
     /**
@@ -56,10 +73,6 @@ class ArticlesController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $article = Article::find($id);
-        $article->title = $request->title;
-        $article->body = $request->body;
-        $article->save();
     }
 
     /**
@@ -71,7 +84,5 @@ class ArticlesController extends Controller
     public function destroy($id)
     {
         //
-        $article = Article::find($id);
-        $article->delete();
     }
 }
